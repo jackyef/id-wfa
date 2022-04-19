@@ -54,8 +54,9 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'ALAMI',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://alamisharia.co.id/en/career/',
+    imageUrl:
+      'https://alamisharia.co.id/wp-content/themes/alami/images/logo/alami.svg',
   },
   {
     name: 'BukuWarung',

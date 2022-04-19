@@ -5,15 +5,16 @@ import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
 import { getLeverJobOpenings } from './helpers/getLeverJobOpenings';
 
-const companyName = 'Finantier';
+const companyName = 'ALAMI';
 const company = companies.find((c) => c.name === companyName);
 
 export const scrape = async () => {
   if (!company) return;
 
-  const jobOpenings = (await getLeverJobOpenings(company, 'Finantier')).filter(
-    (job) => job.location === 'Remote',
+  const jobOpenings = (await getLeverJobOpenings(company, 'alamigroup')).filter(
+    (job) => job.jobTitle.includes('Remote'),
   );
+
   const output = prettierFormat(
     `
     import { JobOpening } from '../../../../lib/types'
