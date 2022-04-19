@@ -5,10 +5,14 @@ import * as cheerio from 'cheerio';
 
 import { JobOpening } from '../../../lib/types';
 import { prettierFormat } from './prettier';
+import { companies } from '../constants';
 
 const companyName = 'CoLearn';
+const company = companies.find((c) => c.name === companyName);
 
 export const scrape = async () => {
+  if (!company) return;
+
   const response = await fetch('https://boards.greenhouse.io/colearn');
   const html = await response.text();
   const $ = cheerio.load(html);
@@ -25,9 +29,10 @@ export const scrape = async () => {
       if (!location.includes('Indonesia')) return;
 
       const jobTitle = $('a', jobNode).text();
-      const url = `https://boards.greenhouse.io/${$('a', jobNode).attr(
-        'href',
-      )}`;
+      const jobUrl = $('a', jobNode).attr('href');
+      const url = jobUrl
+        ? `https://boards.greenhouse.io/${jobUrl}`
+        : company.jobOpeningsUrl;
 
       const jobOpening: JobOpening = {
         company: companyName,
@@ -55,5 +60,3 @@ export const scrape = async () => {
 
   fs.writeFileSync(path.join(__dirname, 'static', `${companyName}.ts`), output);
 };
-
-scrape();

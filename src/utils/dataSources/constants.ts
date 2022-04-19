@@ -43,8 +43,8 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'Qasir.id',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://www.qasir.id/career',
+    imageUrl: 'https://global-uploads.webflow.com/5f17b3a6740e17c63ab5e642/60235cc90389675a2a31abbb_qasir-logo.svg',
   },
   {
     name: 'Finantier',

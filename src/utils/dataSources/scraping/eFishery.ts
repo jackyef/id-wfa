@@ -5,10 +5,13 @@ import * as cheerio from 'cheerio';
 
 import { JobOpening } from '../../../lib/types';
 import { prettierFormat } from './prettier';
+import { companies } from '../constants';
 
 const companyName = 'eFishery';
+const company = companies.find((c) => c.name === companyName);
 
 export const scrape = async () => {
+  if (!company) return;
   const response = await fetch('https://efishery.com/en/job-search/');
   const html = await response.text();
   const $ = cheerio.load(html);
@@ -24,7 +27,7 @@ export const scrape = async () => {
         $('li:nth-child(1)', element).text().trim() === 'Full-time'
           ? 'Full-time'
           : 'Contract',
-      url: $('figure > a', element).attr('href') || '',
+      url: $('figure > a', element).attr('href') || company.jobOpeningsUrl,
       jobTitle: $('h4', element).text().trim(),
       location: '',
     };
