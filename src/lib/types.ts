@@ -8,9 +8,10 @@ export type Company = {
 export type JobOpening = {
   jobTitle: string;
   url: string; // url to the job opening detail page, fallback to jobOpeningsUrl if none exists
-  location: string;
-  description: string;
   company: Company['name'];
-  employmentType: 'Full-time' | 'Contract';
   departmentName: string; // Engineering, Design, etc.
+  employmentType?: 'Full-time' | 'Contract';
+  location?: string;
+  description?: string;
+  publishedAt?: string;
 };

@@ -1,6 +1,6 @@
 import { Company } from '../../lib/types';
 
-export const companies: Company[] = [
+export const companies: ReadonlyArray<Company> = [
   {
     name: 'Pinhome',
     jobOpeningsUrl: 'https://jobs.ashbyhq.com/Pinhome/',
@@ -9,13 +9,16 @@ export const companies: Company[] = [
   },
   {
     name: 'eFishery',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://efishery.com/en/job-search/',
+    imageUrl:
+      'https://efishery.com/wp-content/uploads/2021/10/logo-colored.png',
   },
   {
     name: 'Pahamify',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://pahamify.com/career/',
+    imageUrl:
+      'https://d1fdloi71mui9q.cloudfront.net/QzVygerQReyNJjz9EezH_1aOIXRSE4YoDmKP5',
+    jobOpeningsFeedUrl: 'https://stg.pahamify.com/career/feed/',
   },
   {
     name: 'Amar Bank',
@@ -117,4 +120,4 @@ export const companies: Company[] = [
     jobOpeningsUrl: '',
     imageUrl: '',
   },
-];
+] as const;
