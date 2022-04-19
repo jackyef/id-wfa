@@ -109,13 +109,15 @@ export const companies: ReadonlyArray<Company> = [
       'https://pbs.twimg.com/profile_images/1467776542327468035/aF7cjsHe_400x400.jpg',
   },
   {
-    name: 'Bibit',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    name: 'Stockbit/Bibit',
+    jobOpeningsUrl: 'https://apply.workable.com/stockbit/',
+    imageUrl: 'https://stockbit.com/assets/template/stockbit.svg',
   },
-  {
-    name: 'Tiket.com',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
+
+  // Skipping Tiket.com because their career pages is hard to scrape lol
+  // {
+  //   name: 'Tiket.com',
+  //   jobOpeningsUrl: 'https://www.tiket.com/careers/',
+  //   imageUrl: '',
+  // },
 ] as const;
