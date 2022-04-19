@@ -1,119 +1,120 @@
-import { Company } from '../../lib/types'
+import { Company } from '../../lib/types';
 
 export const companies: Company[] = [
   {
     name: 'Pinhome',
     jobOpeningsUrl: 'https://jobs.ashbyhq.com/Pinhome/',
-    imageUrl: ''
+    imageUrl:
+      'https://app.ashbyhq.com/api/images/org-theme-wordmark/1bfdaaee-e805-43cb-85a6-17c4eced17f8/855b6de7-3c4d-4b94-9ae3-02fc8a44c87c.png',
   },
   {
     name: 'eFishery',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Pahamify',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Amar Bank',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Sekolah.mu',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'CoLearn',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Qasir.id',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Finantier',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'ALAMI',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'BukuWarung',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Flip.id',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Moladin',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'HappyFresh',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'TADA',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Influx',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Ajaib',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Ajaib',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Ajaib',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Ajaib',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Ajaib',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Kata.ai',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Bibit',
     jobOpeningsUrl: '',
-    imageUrl: ''
+    imageUrl: '',
   },
   {
     name: 'Tiket.com',
     jobOpeningsUrl: '',
-    imageUrl: ''
-  }
-]
+    imageUrl: '',
+  },
+];

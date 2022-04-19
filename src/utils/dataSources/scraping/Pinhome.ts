@@ -3,7 +3,6 @@ import path from 'path';
 import fetch from 'isomorphic-unfetch';
 
 import { JobOpening } from '../../../lib/types';
-import { companies } from '../constants';
 import { prettierFormat } from './prettier';
 
 type AshbyHQJobOpening = {
