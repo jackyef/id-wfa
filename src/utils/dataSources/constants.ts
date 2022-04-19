@@ -77,8 +77,9 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'HappyFresh',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://careers.happyfresh.com/',
+    imageUrl:
+      'https://d12man5gwydfvl.cloudfront.net/wp-content/themes/stockholm/img/marco/images/logo.svg',
   },
   {
     name: 'TADA',
