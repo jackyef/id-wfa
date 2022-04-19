@@ -72,8 +72,8 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'Moladin',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://moladin.com/careers/vacancies',
+    imageUrl: 'https://cdn.moladin.com/static-images/b2c/logo.svg',
   },
   {
     name: 'HappyFresh',

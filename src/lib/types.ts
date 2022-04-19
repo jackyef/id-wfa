@@ -16,5 +16,5 @@ export type JobOpening = {
   employmentType?: 'Full-time' | 'Contract';
   location?: string;
   description?: string;
-  publishedAt?: string;
+  publishedAt?: string; // ISO date string
 };

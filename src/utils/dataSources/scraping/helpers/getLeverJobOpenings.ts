@@ -8,6 +8,7 @@ type LeverJobEntry = {
   };
   hostedUrl: string;
   text: string;
+  createdAt: string;
 };
 
 export const getLeverJobOpenings = async (
@@ -28,6 +29,7 @@ export const getLeverJobOpenings = async (
       url: job.hostedUrl || company.jobOpeningsUrl,
       jobTitle: job.text,
       location: job.categories.location,
+      publishedAt: new Date(job.createdAt).toISOString(),
     };
   });
 

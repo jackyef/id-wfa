@@ -7,6 +7,7 @@ import { scrape as Finantier } from './Finantier';
 import { scrape as ALAMI } from './ALAMI';
 import { scrape as BukuWarung } from './BukuWarung';
 import { scrape as FlipId } from './FlipId';
+import { scrape as Moladin } from './Moladin';
 
 Pinhome();
 eFishery();
@@ -17,3 +18,4 @@ Finantier();
 ALAMI();
 BukuWarung();
 FlipId();
+Moladin();
