@@ -1,6 +1,6 @@
 import { JobOpening } from '../../../../lib/types';
 
-export const Qasir_JOBS: JobOpening[] = [
+export const QasirId_JOBS: JobOpening[] = [
   {
     company: 'Qasir.id',
     departmentName: 'Product',
