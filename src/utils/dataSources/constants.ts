@@ -60,8 +60,9 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'BukuWarung',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://bukuwarung.com/career/',
+    imageUrl:
+      'https://cdn.bukuwarung.com/wp-content/themes/generatepress-child/assets/images/logo.png',
   },
   {
     name: 'Flip.id',
@@ -85,26 +86,6 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'Influx',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
-  {
-    name: 'Ajaib',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
-  {
-    name: 'Ajaib',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
-  {
-    name: 'Ajaib',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
-  {
-    name: 'Ajaib',
     jobOpeningsUrl: '',
     imageUrl: '',
   },

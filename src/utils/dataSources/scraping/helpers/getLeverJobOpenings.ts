@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch';
 import { Company, JobOpening } from '../../../../lib/types';
 
 type LeverJobEntry = {

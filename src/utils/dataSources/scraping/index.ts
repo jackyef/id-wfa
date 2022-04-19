@@ -5,6 +5,7 @@ import { scrape as CoLearn } from './CoLearn';
 import { scrape as Qasir } from './Qasir';
 import { scrape as Finantier } from './Finantier';
 import { scrape as ALAMI } from './ALAMI';
+import { scrape as BukuWarung } from './BukuWarung';
 
 Pinhome();
 eFishery();
@@ -13,3 +14,4 @@ CoLearn();
 Qasir();
 Finantier();
 ALAMI();
+BukuWarung();
