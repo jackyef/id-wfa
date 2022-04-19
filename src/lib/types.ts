@@ -13,7 +13,6 @@ export type JobOpening = {
 
   // The properties below are optional
   level?: string; // Junior, Mid, Senior, etc.
-  employmentType?: 'Full-time' | 'Contract';
   location?: string;
   description?: string;
   publishedAt?: string; // ISO date string

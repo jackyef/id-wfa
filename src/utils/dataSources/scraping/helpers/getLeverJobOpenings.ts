@@ -29,7 +29,6 @@ export const getLeverJobOpenings = async (
         ? job.categories.team
         : job.categories.department,
       description: '',
-      employmentType: 'Full-time' as const,
       url: job.hostedUrl || company.jobOpeningsUrl,
       jobTitle: job.text,
       location: job.categories.location,

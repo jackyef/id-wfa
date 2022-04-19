@@ -27,7 +27,6 @@ export const scrape = async () => {
       company: companyName,
       departmentName: job.departmentName,
       description: '',
-      employmentType: 'Full-time',
       url: `https://moladin.com/careers/${job.id}-${job.name.replace(
         / /g,
         '-',

@@ -35,7 +35,6 @@ export const scrape = async () => {
       company: companyName,
       departmentName: category,
       description: '',
-      employmentType: 'Full-time',
       url,
       jobTitle,
       location: '',

@@ -23,10 +23,6 @@ export const scrape = async () => {
       company: companyName,
       departmentName: $('li:nth-child(2)', element).text().trim(),
       description: '',
-      employmentType:
-        $('li:nth-child(1)', element).text().trim() === 'Full-time'
-          ? 'Full-time'
-          : 'Contract',
       url: $('figure > a', element).attr('href') || company.jobOpeningsUrl,
       jobTitle: $('h4', element).text().trim(),
       location: '',

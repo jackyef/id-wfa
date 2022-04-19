@@ -52,8 +52,6 @@ export const scrape = async () => {
       company: companyName,
       departmentName: job.departmentName,
       description: '',
-      employmentType:
-        job.employmentType === 'Fulltime' ? 'Full-time' : 'Contract',
       url: `https://jobs.ashbyhq.com/Pinhome/${job.id}`,
       jobTitle: job.title,
       location: job.locationName,

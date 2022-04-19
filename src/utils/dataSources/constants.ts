@@ -81,20 +81,26 @@ export const companies: ReadonlyArray<Company> = [
     imageUrl:
       'https://d12man5gwydfvl.cloudfront.net/wp-content/themes/stockholm/img/marco/images/logo.svg',
   },
-  {
-    name: 'TADA',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
-  {
-    name: 'Influx',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
+
+  // Skipping TADA because their jobs seems to be hybrid remote, not fully remote (WFA)
+  // {
+  //   name: 'TADA',
+  //   jobOpeningsUrl: '',
+  //   imageUrl: '',
+  // },
+
+  // Skipping influx because it doesn't seem to be a Indonesian company
+  // {
+  //   name: 'Influx',
+  //   jobOpeningsUrl: '',
+  //   imageUrl: '',
+  // },
+
   {
     name: 'Ajaib',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://career.ajaib.co.id/jobs/',
+    imageUrl:
+      'https://ajaib-wp-s3-artifact.s3.ap-southeast-1.amazonaws.com/prd/wp-content/uploads/2020/03/cropped-new_ajaib_logo.png',
   },
   {
     name: 'Kata.ai',
