@@ -44,12 +44,13 @@ export const companies: ReadonlyArray<Company> = [
   {
     name: 'Qasir.id',
     jobOpeningsUrl: 'https://www.qasir.id/career',
-    imageUrl: 'https://global-uploads.webflow.com/5f17b3a6740e17c63ab5e642/60235cc90389675a2a31abbb_qasir-logo.svg',
+    imageUrl:
+      'https://global-uploads.webflow.com/5f17b3a6740e17c63ab5e642/60235cc90389675a2a31abbb_qasir-logo.svg',
   },
   {
     name: 'Finantier',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://finantier.co/careers/',
+    imageUrl: 'https://finantier.co/img/logo-navbar.png',
   },
   {
     name: 'ALAMI',

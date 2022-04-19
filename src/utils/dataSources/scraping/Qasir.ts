@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import * as cheerio from 'cheerio';
 
 import { JobOpening } from '../../../lib/types';
-import { prettierFormat } from './prettier';
+import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
 
 const companyName = 'Qasir.id';
@@ -28,7 +28,7 @@ export const scrape = async () => {
     if (!['Product', 'Technology'].includes(category)) return;
 
     const jobTitle = jobTitleNode.text().trim();
-    const jobUrl = $('a', element).attr('href') || company.jobOpeningsUrl;
+    const jobUrl = $('a', element).attr('href');
     const url = jobUrl ? `https://qasir.id${jobUrl}` : company.jobOpeningsUrl;
 
     const jobOpening: JobOpening = {

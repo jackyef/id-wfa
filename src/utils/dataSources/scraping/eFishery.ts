@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import * as cheerio from 'cheerio';
 
 import { JobOpening } from '../../../lib/types';
-import { prettierFormat } from './prettier';
+import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
 
 const companyName = 'eFishery';

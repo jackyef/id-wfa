@@ -7,32 +7,27 @@ import { JobOpening } from '../../../lib/types';
 import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
 
-const companyName = 'CoLearn';
+const companyName = 'Finantier';
 const company = companies.find((c) => c.name === companyName);
 
 export const scrape = async () => {
   if (!company) return;
 
-  const response = await fetch('https://boards.greenhouse.io/colearn');
+  const response = await fetch(
+    'https://jobs.lever.co/Finantier/?location=Remote',
+  );
   const html = await response.text();
   const $ = cheerio.load(html);
 
   const jobOpenings: JobOpening[] = [];
 
-  $('section.level-0').each((_, element) => {
-    const category = $('h3', element).text().trim();
-    const jobNodes = $('.opening', element);
+  $('.postings-group').each((_, element) => {
+    const category = $('.large-category-header', element).text().trim();
 
-    jobNodes.each((_, jobNode) => {
-      const location = $('.location', jobNode).text();
-
-      if (!location.includes('Indonesia')) return;
-
-      const jobTitle = $('a', jobNode).text();
-      const jobUrl = $('a', jobNode).attr('href');
-      const url = jobUrl
-        ? `https://boards.greenhouse.io/${jobUrl}`
-        : company.jobOpeningsUrl;
+    $('.posting', element).each((_, jobPostingNode) => {
+      const linkNode = $('a.posting-title', jobPostingNode);
+      const jobTitle = $('h5', linkNode).text().trim();
+      const url = linkNode.attr('href') || company.jobOpeningsUrl;
 
       const jobOpening: JobOpening = {
         company: companyName,
