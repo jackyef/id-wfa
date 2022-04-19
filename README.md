@@ -1,5 +1,7 @@
 ## wfa-id
-
+Next step:
+1. Implement UI
+2. Setup GH Action with cron for automatic deployment
 ### Project goal
 Show job openings of various Indonesian companies that have declared themselves as WFH.
 Normalize implementing RSS feed for Indonesian job postings.

@@ -12,8 +12,10 @@ const initDataSource = () => {
 
   for (let i = 0; i < inMemoryDb.length; i += 1) {
     const company = inMemoryDb[i];
-    company.jobs = require(`./scraping/static/${company.safeName}.ts`)[
-      `${company.safeName}_JOBS`
+    const usedName = company.safeName || company.name;
+
+    company.jobs = require(`./scraping/static/${usedName}.ts`)[
+      `${usedName}_JOBS`
     ];
   }
 
@@ -25,10 +27,16 @@ const dataSource = initDataSource();
 // Not really a performant db, but this will do for now
 // We will be using this in getStaticProps
 export const db = {
-  getJobsByCompany: (companyName: string) => {
-    return dataSource.find((c) => c.name === companyName)?.jobs ?? [];
+  getJobsByCompany: (companySafeName: string) => {
+    return (
+      dataSource.find(
+        (c) =>
+          c.safeName?.toLowerCase() === companySafeName.toLowerCase() ||
+          c.name.toLowerCase() === companySafeName.toLowerCase(),
+      )?.jobs ?? []
+    );
   },
-  getCompanies: () => companies,
+  getCompanies: () => companies as Company[],
   searchJobs: (query: string) => {
     const results = [];
 
