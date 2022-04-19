@@ -3,6 +3,7 @@ export type Company = {
   imageUrl: string;
   jobOpeningsUrl: string;
   jobOpeningsFeedUrl?: string; // Optional, used if the page implement a feed for the job openings
+  safeName?: string;
 };
 
 export type JobOpening = {

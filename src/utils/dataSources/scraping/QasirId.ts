@@ -43,7 +43,7 @@ export const scrape = async () => {
     jobOpenings.push(jobOpening);
   });
 
-  const safeCompanyName = 'Qasir';
+  const safeCompanyName = company.safeName;
 
   const output = prettierFormat(
     `

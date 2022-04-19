@@ -48,7 +48,7 @@ export const scrape = async () => {
     })
     .filter(Boolean);
 
-  const safeCompanyName = 'StockbitBibit';
+  const safeCompanyName = company.safeName;
   const output = prettierFormat(
     `
     import { JobOpening } from '../../../../lib/types'

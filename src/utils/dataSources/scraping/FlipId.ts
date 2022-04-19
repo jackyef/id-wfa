@@ -51,7 +51,7 @@ export const scrape = async () => {
     });
   });
 
-  const safeCompanyName = 'FlipId';
+  const safeCompanyName = company.safeName;
 
   const output = prettierFormat(
     `

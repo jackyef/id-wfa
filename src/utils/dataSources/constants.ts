@@ -46,6 +46,7 @@ export const companies: ReadonlyArray<Company> = [
     jobOpeningsUrl: 'https://www.qasir.id/career',
     imageUrl:
       'https://global-uploads.webflow.com/5f17b3a6740e17c63ab5e642/60235cc90389675a2a31abbb_qasir-logo.svg',
+    safeName: 'QasirId',
   },
   {
     name: 'Finantier',
@@ -69,6 +70,7 @@ export const companies: ReadonlyArray<Company> = [
     jobOpeningsUrl: 'https://career.flip.id/jobs',
     imageUrl:
       'https://s3.amazonaws.com/files.freshteam.com/production/47295/attachments/2001341472/logo/flip_logo.png',
+    safeName: 'FlipId',
   },
   {
     name: 'Moladin',
@@ -107,11 +109,13 @@ export const companies: ReadonlyArray<Company> = [
     jobOpeningsUrl: 'https://careers.smartrecruiters.com/Kataai',
     imageUrl:
       'https://pbs.twimg.com/profile_images/1467776542327468035/aF7cjsHe_400x400.jpg',
+    safeName: 'KataAi',
   },
   {
     name: 'Stockbit/Bibit',
     jobOpeningsUrl: 'https://apply.workable.com/stockbit/',
     imageUrl: 'https://stockbit.com/assets/template/stockbit.svg',
+    safeName: 'StockbitBibit',
   },
 
   // Skipping Tiket.com because their career pages is hard to scrape lol

@@ -15,7 +15,7 @@ export const scrape = async () => {
     useFunctionName: true,
   });
 
-  const safeCompanyName = 'KataAi';
+  const safeCompanyName = company.safeName;
   const output = prettierFormat(
     `
     import { JobOpening } from '../../../../lib/types'
