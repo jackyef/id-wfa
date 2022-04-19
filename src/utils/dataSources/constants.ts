@@ -66,8 +66,9 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'Flip.id',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://career.flip.id/jobs',
+    imageUrl:
+      'https://s3.amazonaws.com/files.freshteam.com/production/47295/attachments/2001341472/logo/flip_logo.png',
   },
   {
     name: 'Moladin',

@@ -6,6 +6,7 @@ import { scrape as Qasir } from './Qasir';
 import { scrape as Finantier } from './Finantier';
 import { scrape as ALAMI } from './ALAMI';
 import { scrape as BukuWarung } from './BukuWarung';
+import { scrape as FlipId } from './FlipId';
 
 Pinhome();
 eFishery();
@@ -15,3 +16,4 @@ Qasir();
 Finantier();
 ALAMI();
 BukuWarung();
+FlipId();
