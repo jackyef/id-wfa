@@ -8,7 +8,7 @@ import { prettierFormat } from './prettier';
 import { companies } from '../constants';
 
 const companyName = 'Pahamify';
-const company = companies.find((c) => c.name === 'Pahamify');
+const company = companies.find((c) => c.name === companyName);
 
 export const scrape = async () => {
   if (!company || !company.jobOpeningsFeedUrl) return;

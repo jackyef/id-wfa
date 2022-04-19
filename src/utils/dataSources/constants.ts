@@ -20,20 +20,26 @@ export const companies: ReadonlyArray<Company> = [
       'https://d1fdloi71mui9q.cloudfront.net/QzVygerQReyNJjz9EezH_1aOIXRSE4YoDmKP5',
     jobOpeningsFeedUrl: 'https://stg.pahamify.com/career/feed/',
   },
-  {
-    name: 'Amar Bank',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
-  {
-    name: 'Sekolah.mu',
-    jobOpeningsUrl: '',
-    imageUrl: '',
-  },
+
+  // Skipping Amar Bank for now because they don't seem to have a dedicated
+  // Job opening detail page. They just have a bunch of mailto:* links
+  // {
+  //   name: 'Amar Bank',
+  //   jobOpeningsUrl: '',
+  //   imageUrl: '',
+  // },
+
+  // Skipping because this one requires XSRF token
+  // {
+  //   name: 'Sekolah.mu',
+  //   jobOpeningsUrl: 'https://jobs.talentics.id/sekolahmu',
+  //   imageUrl: 'https://cdn.sekolah.mu/assets/home/sekolahmu_logo.svg',
+  // },
   {
     name: 'CoLearn',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://kelas.colearn.id/career/',
+    imageUrl:
+      'https://s3-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/610/400/resized/CL_Logo_Blue.png?1608617510',
   },
   {
     name: 'Qasir.id',
