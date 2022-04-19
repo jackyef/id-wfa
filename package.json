@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
+    "clsx": "^1.1.1",
     "isomorphic-unfetch": "^3.1.0",
     "next": "12.1.5",
     "react": "18.0.0",
@@ -22,6 +23,7 @@
     "@types/prettier": "^2.6.0",
     "@types/react": "18.0.5",
     "@types/tailwindcss": "^3.0.3",
+    "autoprefixer": "^10.4.4",
     "cheerio": "^1.0.0-rc.10",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
