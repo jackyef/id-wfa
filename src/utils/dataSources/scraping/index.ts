@@ -10,6 +10,7 @@ import { scrape as FlipId } from './FlipId';
 import { scrape as Moladin } from './Moladin';
 import { scrape as HappyFresh } from './HappyFresh';
 import { scrape as Ajaib } from './Ajaib';
+import { scrape as KataAi } from './KataAi';
 
 Pinhome();
 eFishery();
@@ -23,3 +24,4 @@ FlipId();
 Moladin();
 HappyFresh();
 Ajaib();
+KataAi();

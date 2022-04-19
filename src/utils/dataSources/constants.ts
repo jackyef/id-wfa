@@ -104,8 +104,9 @@ export const companies: ReadonlyArray<Company> = [
   },
   {
     name: 'Kata.ai',
-    jobOpeningsUrl: '',
-    imageUrl: '',
+    jobOpeningsUrl: 'https://careers.smartrecruiters.com/Kataai',
+    imageUrl:
+      'https://pbs.twimg.com/profile_images/1467776542327468035/aF7cjsHe_400x400.jpg',
   },
   {
     name: 'Bibit',
