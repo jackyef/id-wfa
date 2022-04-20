@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
+import { MetaTags } from '../MetaTags/MetaTags';
 
 type Props = {
   image: string;
@@ -11,6 +11,7 @@ type Props = {
 export const CompanyCard = ({ image, name, safeName }: Props) => {
   return (
     <>
+      <MetaTags />
       <div
         className={clsx(
           'flex',
