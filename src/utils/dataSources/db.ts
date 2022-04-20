@@ -1,41 +1,41 @@
-import { Company, JobOpening } from '../../lib/types';
+import { Company } from '../../lib/types';
 import { companies } from './constants';
 
-type CompanyWithJobs = Company & {
-  jobs?: JobOpening[];
-};
+// type CompanyWithJobs = Company & {
+//   jobs?: JobOpening[];
+// };
 
-type JobDataSource = CompanyWithJobs[];
+// type JobDataSource = CompanyWithJobs[];
 
-const initDataSource = () => {
-  const inMemoryDb: JobDataSource = [...companies];
+// const initDataSource = () => {
+//   const inMemoryDb: JobDataSource = [...companies];
 
-  for (let i = 0; i < inMemoryDb.length; i += 1) {
-    const company = inMemoryDb[i];
-    const usedName = company.safeName || company.name;
+//   for (let i = 0; i < inMemoryDb.length; i += 1) {
+//     const company = inMemoryDb[i];
+//     const usedName = company.safeName || company.name;
 
-    company.jobs = require(`./scraping/static/${usedName}.ts`)[
-      `${usedName}_JOBS`
-    ];
-  }
+//     company.jobs = require(`./scraping/static/${usedName}.ts`)[
+//       `${usedName}_JOBS`
+//     ];
+//   }
 
-  return inMemoryDb;
-};
+//   return inMemoryDb;
+// };
 
-const dataSource = initDataSource();
+// const dataSource = initDataSource();
 
 // Not really a performant db, but this will do for now
 // We will be using this in getStaticProps
 export const db = {
-  getJobsByCompany: (companySafeName: string) => {
-    return (
-      dataSource.find(
-        (c) =>
-          c.safeName?.toLowerCase() === companySafeName.toLowerCase() ||
-          c.name.toLowerCase() === companySafeName.toLowerCase(),
-      )?.jobs ?? []
-    );
-  },
+  // getJobsByCompany: (companySafeName: string) => {
+  //   return (
+  //     dataSource.find(
+  //       (c) =>
+  //         c.safeName?.toLowerCase() === companySafeName.toLowerCase() ||
+  //         c.name.toLowerCase() === companySafeName.toLowerCase(),
+  //     )?.jobs ?? []
+  //   );
+  // },
   getJobsByCompanyLazily: async (companySafeName: string) => {
     const matchedCompany = companies.find(
       (company) =>
@@ -62,15 +62,15 @@ export const db = {
     }
   },
   getCompanies: () => companies as Company[],
-  searchJobs: (query: string) => {
-    const results = [];
+  // searchJobs: (query: string) => {
+  //   const results = [];
 
-    return dataSource.forEach((c) =>
-      c.jobs?.forEach((j) => {
-        if (j.jobTitle.toLowerCase().includes(query.toLowerCase())) {
-          results.push(j);
-        }
-      }),
-    );
-  },
+  //   return dataSource.forEach((c) =>
+  //     c.jobs?.forEach((j) => {
+  //       if (j.jobTitle.toLowerCase().includes(query.toLowerCase())) {
+  //         results.push(j);
+  //       }
+  //     }),
+  //   );
+  // },
 };
