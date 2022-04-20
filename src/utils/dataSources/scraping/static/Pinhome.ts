@@ -3,6 +3,14 @@ import { JobOpening } from '../../../../lib/types';
 export const Pinhome_JOBS: JobOpening[] = [
   {
     company: 'Pinhome',
+    departmentName: 'Digital Marketing',
+    description: '',
+    url: 'https://jobs.ashbyhq.com/Pinhome/cbd819b5-a2fc-40a5-a890-43dccfe15970',
+    jobTitle: 'SEO Technical Specialist',
+    location: 'Pinhome',
+  },
+  {
+    company: 'Pinhome',
     departmentName: 'Engineering',
     description: '',
     url: 'https://jobs.ashbyhq.com/Pinhome/a8052af8-aa37-48ae-adde-db12016ed1bd',
@@ -69,6 +77,22 @@ export const Pinhome_JOBS: JobOpening[] = [
     company: 'Pinhome',
     departmentName: 'Pinhome Capital',
     description: '',
+    url: 'https://jobs.ashbyhq.com/Pinhome/a564ad24-fec3-4bba-a700-4985cb348a40',
+    jobTitle: 'Campaign Associate (Bandung)',
+    location: 'Pinhome Capital',
+  },
+  {
+    company: 'Pinhome',
+    departmentName: 'Pinhome Capital',
+    description: '',
+    url: 'https://jobs.ashbyhq.com/Pinhome/33a36b89-5d7d-4e44-9d4d-48f8a230f3b5',
+    jobTitle: 'Performance Marketing Specialist',
+    location: 'Pinhome Capital',
+  },
+  {
+    company: 'Pinhome',
+    departmentName: 'Pinhome Capital',
+    description: '',
     url: 'https://jobs.ashbyhq.com/Pinhome/2ecfde11-4aa4-4a06-82d8-88e4ae203596',
     jobTitle: 'Portfolio Manager',
     location: 'Pinhome',
@@ -87,14 +111,6 @@ export const Pinhome_JOBS: JobOpening[] = [
     description: '',
     url: 'https://jobs.ashbyhq.com/Pinhome/c9b804e3-4c79-479d-bc00-33bf4f6c90dc',
     jobTitle: 'Product Researcher',
-    location: 'Pinhome',
-  },
-  {
-    company: 'Pinhome',
-    departmentName: 'Sales & Commercial',
-    description: '',
-    url: 'https://jobs.ashbyhq.com/Pinhome/5fb0e698-c65f-4a12-a2fa-1d77d1a62ee2',
-    jobTitle: 'Commercial Ops and Performance Specialist',
     location: 'Pinhome',
   },
   {

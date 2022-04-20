@@ -12,6 +12,15 @@ export const BukuWarung_JOBS: JobOpening[] = [
   },
   {
     company: 'BukuWarung',
+    departmentName: 'Engineering',
+    description: '',
+    url: 'https://jobs.lever.co/bukuwarung/8c25b0ad-2591-4dc7-9f72-91b114e730b6',
+    jobTitle: 'Data Platform Engineer',
+    location: 'Jakarta',
+    publishedAt: '2022-04-20T05:10:54.392Z',
+  },
+  {
+    company: 'BukuWarung',
     departmentName: 'Product, Design and Research',
     description: '',
     url: 'https://jobs.lever.co/bukuwarung/1a46c247-b1b4-46ce-8a02-67dcd4800a3b',

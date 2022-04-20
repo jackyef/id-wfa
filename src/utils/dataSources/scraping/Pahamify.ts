@@ -10,8 +10,8 @@ import { companies } from '../constants';
 const companyName = 'Pahamify';
 const company = companies.find((c) => c.name === companyName);
 
-export const scrape = async () => {
-  if (!company || !company.jobOpeningsFeedUrl) return;
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company || !company.jobOpeningsFeedUrl) return [];
 
   const response = await fetch(company.jobOpeningsFeedUrl);
   const xml = await response.text();
@@ -37,6 +37,14 @@ export const scrape = async () => {
 
     jobOpenings.push(jobOpening);
   });
+
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  if (!company || !company.jobOpeningsFeedUrl) return;
+
+  const jobOpenings = await getJobOpenings();
 
   const output = prettierFormat(
     `

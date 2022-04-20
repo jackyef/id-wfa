@@ -10,8 +10,8 @@ import { companies } from '../constants';
 const companyName = 'CoLearn';
 const company = companies.find((c) => c.name === companyName);
 
-export const scrape = async () => {
-  if (!company) return;
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company) return [];
 
   const response = await fetch('https://boards.greenhouse.io/colearn');
   const html = await response.text();
@@ -46,6 +46,14 @@ export const scrape = async () => {
       jobOpenings.push(jobOpening);
     });
   });
+
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  if (!company) return;
+
+  const jobOpenings = await getJobOpenings();
 
   const output = prettierFormat(
     `

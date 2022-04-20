@@ -15,7 +15,7 @@ type MoladinJobOpening = {
 
 const companyName = 'Moladin';
 
-export const scrape = async () => {
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
   const response = await fetch(
     'https://backend-career-site.production.jinny.id/jobs/?page=1&per_page=10&sort=created_date|desc&department_id=&job_location_id=2&job_type_id=&search=',
   );
@@ -36,6 +36,12 @@ export const scrape = async () => {
       publishedAt: new Date(job.createdAt).toISOString(),
     };
   });
+
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  const jobOpenings = await getJobOpenings();
 
   const output = prettierFormat(
     `

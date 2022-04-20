@@ -4,6 +4,7 @@ import fetch from 'isomorphic-unfetch';
 
 import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
+import { JobOpening } from '../../../lib/types';
 
 type StockbitJobEntry = {
   id: string;
@@ -20,8 +21,8 @@ type StockbitJobEntry = {
 const companyName = 'Stockbit/Bibit';
 const company = companies.find((c) => c.name === companyName);
 
-export const scrape = async () => {
-  if (!company) return;
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company) return [];
 
   const response = await fetch(
     'https://apply.workable.com/api/v3/accounts/stockbit/jobs',
@@ -32,21 +33,27 @@ export const scrape = async () => {
   const json = await response.json();
   const jobEntries = json.results as StockbitJobEntry[];
 
-  const jobOpenings = jobEntries
-    .map((job) => {
-      if (job.location.country !== 'Indonesia') return;
-      if (!job.remote) return;
+  const jobOpenings = jobEntries.map((job) => {
+    if (job.location.country !== 'Indonesia') return;
+    if (!job.remote) return;
 
-      return {
-        company: company.name,
-        departmentName: job.department[0],
-        jobTitle: job.title,
-        url: `https://apply.workable.com/stockbit/j/${job.shortcode}`,
-        location: job.location.country,
-        publishedAt: new Date(job.published).toISOString(),
-      };
-    })
-    .filter(Boolean);
+    return {
+      company: company.name,
+      departmentName: job.department[0],
+      jobTitle: job.title,
+      url: `https://apply.workable.com/stockbit/j/${job.shortcode}`,
+      location: job.location.country,
+      publishedAt: new Date(job.published).toISOString(),
+    };
+  });
+
+  return jobOpenings.filter(Boolean) as JobOpening[];
+};
+
+export const scrape = async () => {
+  if (!company) return;
+
+  const jobOpenings = await getJobOpenings();
 
   const safeCompanyName = company.safeName;
   const output = prettierFormat(

@@ -103,6 +103,15 @@ export const ALAMI_JOBS: JobOpening[] = [
   },
   {
     company: 'ALAMI',
+    departmentName: 'Product Development',
+    description: '',
+    url: 'https://jobs.lever.co/alamigroup/c313920c-2817-47e3-8a39-2d3cd2301751',
+    jobTitle: 'Product Manager Intern - Remote Work',
+    location: 'Jakarta',
+    publishedAt: '2022-03-21T03:30:00.478Z',
+  },
+  {
+    company: 'ALAMI',
     departmentName: 'Engineering',
     description: '',
     url: 'https://jobs.lever.co/alamigroup/1e496258-db4d-445a-922e-0e448e22f7e9',

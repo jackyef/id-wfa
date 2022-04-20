@@ -10,8 +10,9 @@ import { companies } from '../constants';
 const companyName = 'eFishery';
 const company = companies.find((c) => c.name === companyName);
 
-export const scrape = async () => {
-  if (!company) return;
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company) return [];
+
   const response = await fetch('https://efishery.com/en/job-search/');
   const html = await response.text();
   const $ = cheerio.load(html);
@@ -30,6 +31,14 @@ export const scrape = async () => {
 
     jobOpenings.push(jobOpening);
   });
+
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  if (!company) return;
+
+  const jobOpenings: JobOpening[] = await getJobOpenings();
 
   const output = prettierFormat(
     `

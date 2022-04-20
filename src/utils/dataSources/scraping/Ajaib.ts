@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { JobOpening } from '../../../lib/types';
 
 import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
@@ -8,14 +9,20 @@ import { getSmartRecruitersJobOpenings } from './helpers/getSmartRecruitersJobOp
 const companyName = 'Ajaib';
 const company = companies.find((c) => c.name === companyName);
 
-export const scrape = async () => {
-  if (!company) return;
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company) return [];
 
   const jobOpenings = (
     await getSmartRecruitersJobOpenings(company, 'Ajaib')
   ).filter((j) => {
     return Boolean(j.departmentName) && j.location === 'id';
   });
+
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  const jobOpenings = await getJobOpenings();
 
   const output = prettierFormat(
     `

@@ -3,6 +3,14 @@ import { JobOpening } from '../../../../lib/types';
 export const StockbitBibit_JOBS: JobOpening[] = [
   {
     company: 'Stockbit/Bibit',
+    departmentName: 'Product Design',
+    jobTitle: 'UI/UX Designer - Crypto',
+    url: 'https://apply.workable.com/stockbit/j/99279F094E',
+    location: 'Indonesia',
+    publishedAt: '2022-04-20T00:00:00.000Z',
+  },
+  {
+    company: 'Stockbit/Bibit',
     departmentName: 'Technology',
     jobTitle: 'Principal Engineer',
     url: 'https://apply.workable.com/stockbit/j/285DFB7066',

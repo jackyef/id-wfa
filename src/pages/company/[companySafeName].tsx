@@ -53,6 +53,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths,
     fallback: false,
+    revalidate: 3600 * 24, // Revalidates at most every 24 hours
   };
 };
 

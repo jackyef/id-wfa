@@ -10,8 +10,8 @@ import { companies } from '../constants';
 const companyName = 'Flip.id';
 const company = companies.find((c) => c.name === companyName);
 
-export const scrape = async () => {
-  if (!company) return;
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company) return [];
 
   const response = await fetch(
     'https://career.flip.id/jobs?location=[]&department=[]&jobType=[]&title=&isRemoteLocation=true',
@@ -51,6 +51,13 @@ export const scrape = async () => {
     });
   });
 
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  if (!company) return;
+
+  const jobOpenings = await getJobOpenings();
   const safeCompanyName = company.safeName;
 
   const output = prettierFormat(

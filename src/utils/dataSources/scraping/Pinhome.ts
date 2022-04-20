@@ -19,7 +19,7 @@ type AshbyHQJobData = {
 
 const companyName = 'Pinhome';
 
-export const scrape = async () => {
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
   const response = await fetch(
     'https://jobs.ashbyhq.com/api/non-user-graphql',
     {
@@ -58,6 +58,11 @@ export const scrape = async () => {
     };
   });
 
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  const jobOpenings = await getJobOpenings();
   const output = prettierFormat(
     `
   import { JobOpening } from '../../../../lib/types'
