@@ -22,6 +22,10 @@ export const CompanyCard = ({ image, name, safeName }: Props) => {
           'pt-8',
           'space-y-4',
           'bg-white',
+          'min-w-[200px]',
+          'max-w-[280px]',
+          'sm:min-w-none',
+          'sm:max-w-none',
         )}
       >
         <div
@@ -39,7 +43,7 @@ export const CompanyCard = ({ image, name, safeName }: Props) => {
             className={clsx('w-20', 'h-20', 'object-contain', 'rounded-full')}
           />
         </div>
-        <h3>{name}</h3>
+        <h3 className={clsx('text-slate-700', 'text-lg')}>{name}</h3>
 
         <Link href={`/company/${safeName}`} passHref>
           <a
@@ -48,14 +52,17 @@ export const CompanyCard = ({ image, name, safeName }: Props) => {
               'text-center',
               'py-4',
               'border-t-2',
+              'rounded-b-xl',
+              'bg-cyan-50',
+              'text-cyan-800',
               'border-t-slate-100',
-              'text-purple-600',
-              'hover:text-purple-500',
-              'hover:shadow-inner',
-              'hover:shadow-purple-200',
-              'focus:text-purple-500',
-              'focus:shadow-inner',
-              'focus:shadow-purple-200',
+              'text-cyan-600',
+              'hover:text-cyan-600',
+              'hover:shadow',
+              'hover:shadow-cyan-200',
+              'focus:text-cyan-600',
+              'focus:shadow',
+              'focus:shadow-cyan-200',
               'focus:outline-dotted',
             )}
           >

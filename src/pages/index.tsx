@@ -36,7 +36,7 @@ const FancyBackground = () => {
             ),
             radial-gradient(
               at 0% 50%,
-              hsla(244, 100%, 93%, 1) 0px,
+              hsla(327, 20%, 60%, 1) 0px,
               transparent 50%
             ),
             radial-gradient(
@@ -90,7 +90,7 @@ const HeroText = () => {
         'font-bold',
         'drop-shadow-lg',
         'pt-24',
-        'xl:pt-72',
+        'xl:pt-[22vh]',
         'max-w-xl',
         'mb-16',
       )}
@@ -121,6 +121,7 @@ const Home: NextPage<Props> = () => {
                 'lg:grid-cols-4',
                 'xl:grid-cols-2',
                 'gap-6',
+                'justify-items-center',
               )}
             >
               {companies.map((company) => {
