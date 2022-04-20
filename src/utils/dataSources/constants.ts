@@ -17,7 +17,7 @@ export const companies: ReadonlyArray<Company> = [
     name: 'Pahamify',
     jobOpeningsUrl: 'https://pahamify.com/career/',
     imageUrl:
-      'https://d1fdloi71mui9q.cloudfront.net/QzVygerQReyNJjz9EezH_1aOIXRSE4YoDmKP5',
+      'https://kerjabilitas.com/user_image/user2/logo_e5efdf1e26f4ef0117910b60ac764cca.jpg',
     jobOpeningsFeedUrl: 'https://stg.pahamify.com/career/feed/',
   },
 
@@ -68,8 +68,7 @@ export const companies: ReadonlyArray<Company> = [
   {
     name: 'Flip.id',
     jobOpeningsUrl: 'https://career.flip.id/jobs',
-    imageUrl:
-      'https://s3.amazonaws.com/files.freshteam.com/production/47295/attachments/2001341472/logo/flip_logo.png',
+    imageUrl: 'https://flip.id/aset_gambar/static_page/logo-putih-flip.png',
     safeName: 'FlipId',
   },
   {
@@ -108,7 +107,7 @@ export const companies: ReadonlyArray<Company> = [
     name: 'Kata.ai',
     jobOpeningsUrl: 'https://careers.smartrecruiters.com/Kataai',
     imageUrl:
-      'https://pbs.twimg.com/profile_images/1467776542327468035/aF7cjsHe_400x400.jpg',
+      'https://lh3.googleusercontent.com/h_HBFvVsfSaD3aOhfktQJbKn3lb40ixLI35VBODfXXOQSx9uygHdEpqUrlgN-lIPMD5fARri2Q5rXSnncMkMZGM00blxXSZATPLZdg',
     safeName: 'KataAi',
   },
   {

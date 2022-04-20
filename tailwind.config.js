@@ -1,7 +1,13 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
-  plugins: []
-}
+  plugins: [],
+};
