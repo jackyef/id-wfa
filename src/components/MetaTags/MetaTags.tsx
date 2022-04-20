@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
 export const MetaTags = () => {
-  const title = 'Indonesian Work-from-anywhere-friendly companies 🇮🇩';
+  const title = 'Indonesian remote-friendly companies 🇮🇩';
   const description =
-    'Job openings for Indonesian companies that are WFA-friendly.';
+    'Job openings for Indonesian companies that offer the perk of working from anywhere.';
   const keywords = 'jobs, work, remote, wfa, indonesia';
   const url = 'https://wfa-id-ten.vercel.app/';
   const ogImage = 'https://wfa-id-ten.vercel.app/og.png';
