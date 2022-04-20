@@ -36,6 +36,31 @@ export const db = {
       )?.jobs ?? []
     );
   },
+  getJobsByCompanyLazily: async (companySafeName: string) => {
+    const matchedCompany = companies.find(
+      (company) =>
+        company.name.toLowerCase() === companySafeName.toLowerCase() ||
+        company?.safeName?.toLowerCase() === companySafeName.toLowerCase(),
+    );
+
+    if (!matchedCompany) return [];
+
+    const usedName = matchedCompany.safeName ?? matchedCompany.name;
+
+    const loader = require(`./scraping/${usedName}.ts`).getJobOpenings;
+
+    try {
+      const jobOpenings = await loader();
+
+      return jobOpenings;
+    } catch (err) {
+      console.error(
+        `[db.getJobsByCompanyLazily] { companySafeName: "${companySafeName}" } | Error: ${err}`,
+      );
+
+      return [];
+    }
+  },
   getCompanies: () => companies as Company[],
   searchJobs: (query: string) => {
     const results = [];

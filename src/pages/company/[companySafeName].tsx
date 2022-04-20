@@ -53,13 +53,12 @@ export const getStaticPaths: GetStaticPaths = () => {
   return {
     paths,
     fallback: false,
-    revalidate: 3600 * 24, // Revalidates at most every 24 hours
   };
 };
 
-export const getStaticProps: GetStaticProps<Props, Params> = (ctx) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async (ctx) => {
   const { companySafeName } = ctx.params!;
-  const companyJobs = db.getJobsByCompany(companySafeName);
+  const companyJobs = await db.getJobsByCompanyLazily(companySafeName);
   let errorCode = null;
 
   if (!companyJobs || !companyJobs.length) {
@@ -73,6 +72,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = (ctx) => {
       jobs: companyJobs,
       errorCode,
     },
+    revalidate: 3600 * 24, // Revalidates at most every 24 hours
   };
 };
 

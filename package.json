@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "scrape": "node -r @swc-node/register src/utils/dataSources/scraping/index.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
