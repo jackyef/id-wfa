@@ -13,9 +13,9 @@ Number of companies included in this project can increase/decrease as appropriat
 
 If you would like your company to be removed from the site, please [file an issue](https://github.com/jackyef/id-wfa/issues/new) and I'll get to it.
 
-If you would like your company to be included in the site, please also file an issue with
-a link to your jobs list page along with the related announcement as a proof that your company 
-provides full WFA perks. 
+If you would like your company to be included in the site, please also [file an issue](https://github.com/jackyef/id-wfa/issues/new) with
+a link to your jobs list page along with the related announcement as a proof that your company
+provides full WFA perks. Please also include an image URL to the company logo as well.
 
 Though, I can't guarantee I can collect the data myself from the job list page!
 For better support, please provide an endpoint that returns the job data. If you are not sure what this is, ask your dev team, this can be an XML (RSS, feed), plain REST returning a JSON or a GraphQL endpoint. The amount of data this project needs is very little:
