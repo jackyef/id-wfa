@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { useMemo } from 'react';
+import { Fragment, useMemo } from 'react';
 import { JobOpening } from '../../lib/types';
 
 type Props = {
@@ -37,7 +37,7 @@ export const JobList = ({ jobs }: Props) => {
         const deptJobs = groupedByDepartment[dept];
 
         return (
-          <>
+          <Fragment key={dept}>
             <h3
               className={clsx('text-lg', 'font-bold', 'text-slate-700', 'mb-2')}
             >
@@ -57,7 +57,7 @@ export const JobList = ({ jobs }: Props) => {
                 </li>
               ))}
             </ul>
-          </>
+          </Fragment>
         );
       })}
     </>

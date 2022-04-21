@@ -4,6 +4,7 @@ import Error from 'next/error';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { Footer } from '../../components/Footer';
 import { JobList } from '../../components/JobList/JobList';
 import { MetaTags } from '../../components/MetaTags/MetaTags';
 import { Flip } from '../../lib/flip/react';
@@ -170,7 +171,7 @@ const CompanyJobsPage: NextPage<Props> = ({
         <FancyBackground />
       </div>
       <Container>
-        <main>
+        <main className="mb-16">
           <Flip id={companySafeName}>
             <div
               className={clsx(
@@ -224,6 +225,8 @@ const CompanyJobsPage: NextPage<Props> = ({
 
           <JobList jobs={jobs} />
         </main>
+
+        <Footer />
       </Container>
     </div>
   );

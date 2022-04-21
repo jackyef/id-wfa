@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import type { GetStaticProps, NextPage } from 'next';
+
 import { CompanyCard } from '../components/CompanyCard';
+import { Footer } from '../components/Footer';
 import { Company } from '../lib/types';
 import { companies } from '../utils/dataSources/constants';
 import { db } from '../utils/dataSources/db';
@@ -73,34 +75,36 @@ const FancyBackground = () => {
   );
 };
 
-const Container: React.FC<{ children: JSX.Element }> = ({ children }) => {
+const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <div className={clsx('p-8', 'max-w-6xl', 'mx-auto')}>{children}</div>;
 };
 
 const HeroText = () => {
   return (
-    <h1
-      className={clsx(
-        'xl:fixed',
-        'text-4xl',
-        'sm:text-5xl',
-        'md:text-7xl',
-        'leading-tight',
-        'sm:leading-snug',
-        'md:leading-tight',
-        'text-white',
-        'font-bold',
-        'drop-shadow-lg',
-        'pt-24',
-        'xl:pt-[22vh]',
-        'max-w-xl',
-        'mb-16',
-      )}
-    >
-      Indonesian
-      <br />
-      WFA-friendly companies <span aria-hidden>🇮🇩</span>
-    </h1>
+    <>
+      <h1
+        className={clsx(
+          'xl:fixed',
+          'text-4xl',
+          'sm:text-5xl',
+          'md:text-7xl',
+          'leading-tight',
+          'sm:leading-snug',
+          'md:leading-tight',
+          'text-white',
+          'font-bold',
+          'drop-shadow-lg',
+          'pt-24',
+          'xl:pt-[22vh]',
+          'max-w-xl',
+          'mb-16',
+        )}
+      >
+        Indonesian
+        <br />
+        WFA-friendly companies <span aria-hidden>🇮🇩</span>
+      </h1>
+    </>
   );
 };
 
@@ -110,7 +114,7 @@ const Home: NextPage<Props> = () => {
       <div className={clsx('isolate', 'overflow-x-hidden')}>
         <FancyBackground />
         <Container>
-          <main className={clsx('xl:flex', 'justify-between')}>
+          <main className={clsx('xl:flex', 'justify-between', 'mb-16')}>
             <div className={clsx('flex-[3]', 'relative')}>
               <HeroText />
             </div>
@@ -143,6 +147,8 @@ const Home: NextPage<Props> = () => {
               })}
             </ul>
           </main>
+
+          <Footer />
         </Container>
       </div>
     </>
