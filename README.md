@@ -1,27 +1,31 @@
-## wfa-id
-Next step:
-1. Implement UI
-2. Setup GH Action with cron for automatic deployment
-### Project goal
-Show job openings of various Indonesian companies that have declared themselves as WFH.
-Normalize implementing RSS feed for Indonesian job postings.
+# id-wfa 🇮🇩
 
-### Strategy
-Starting out, let's manually scrape the career pages of companies that have declared themselves
-to be doing WFA. Use [this tweet](https://twitter.com/antonybudianto/status/1471428324140347397) as reference.
+This project scrapes job openings from Indonesian companies that have publicly
+announced that they provide WFA (work-from-anywhere) perks to their employees.
 
-Tweet the initial MVP out. If it got enough traction, ask company to DM us if they want their job opening listed. We'll ask them to implement an RSS feed for their career pages.
-[RSS feed implementation reference](https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom)
+The initial version of this project uses this [tweet](https://twitter.com/antonybudianto/status/1471428324140347397) as a reference for the companies list.
+Number of companies included in this project might increase/decrease as needed.
 
-To tweet:
-"If you are a company implementing WFA and want to get your job openings on the site, shoot me a DM! If you are a company that is already listed on the site and you found some inaccuracy in the data, shoot me a DM as well so we can work it out :)"
+## For companies
 
-### Potential problems
-1. Companies putting too many job openings, causing the others to be drowned
-   Solutions:
-   - Limit the number? 
-   - Better way to structure the data, maybe at the top-level just put list of companies?
+If you would like your company to be removed from the site, please file an issue and I'll get to it.
 
-2. How do we decide orders? By publish date, probably. Jobs without publish date will appear later
+If you would like your company to be included in the site, please also file an issue with
+a link to your jobs list page. I can't guarantee I can collect the data myself from there though!
+For better support, please provide an endpoint that returns the job data. If you are not sure what this is, ask your dev team, this can be an XML (RSS, feed), plain REST returning a JSON or a GraphQL endpoint. The amount of data this project need is very little:
 
+```ts
+type JobOpening = {
+  jobTitle: string;
+  url: string; // url to the job opening detail page,
+  company: string;
+  departmentName: string; // Engineering, Design, etc.
+};
+```
 
+### Disclaimer
+
+This project is not affiliated with any of the companies listed. Some information might be inaccurate/incomplete, including but not limited to:
+
+1. Job openings that are included in the site, but apparently not WFA-friendly
+2. Job openings that are WFA-friendly but not included in the site
