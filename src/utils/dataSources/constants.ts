@@ -14,6 +14,13 @@ export const companies: ReadonlyArray<Company> = [
       'https://efishery.com/wp-content/uploads/2021/10/logo-colored.png',
   },
   {
+    name: 'Ruangguru',
+    jobOpeningsUrl: 'https://career.ruangguru.com/',
+    imageUrl:
+      'https://career.ruangguru.com/static/media/logo-ruangguru.044861d0.png',
+    jobOpeningsFeedUrl: 'https://career.ruangguru.com/vacancies',
+  },
+  {
     name: 'Pahamify',
     jobOpeningsUrl: 'https://pahamify.com/career/',
     imageUrl:
