@@ -137,6 +137,12 @@ export const companies: ReadonlyArray<Company> = [
     imageUrl:
       'https://images.glints.com/unsafe/180x0/glints-dashboard.s3.amazonaws.com/company-logo/7973546193a09e8ea30b36e17021e0ec.jpg',
   },
+  {
+    name: 'Ruangguru',
+    jobOpeningsUrl: 'https://career.ruangguru.com/',
+    imageUrl:
+      'https://career.ruangguru.com/static/media/logo-ruangguru.044861d0.png',
+  },
 
   // Skipping Tiket.com because their career pages is hard to scrape lol
   // {
