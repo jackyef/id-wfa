@@ -6,9 +6,9 @@ export const MetaTags = ({
   description = 'Job openings for Indonesian companies that offer the perk of working from anywhere.',
 }) => {
   const router = useRouter();
-  const url = `https://wfa-id-ten.vercel.app${router.asPath}`;
+  const url = `https://id-wfa-companies.vercel.app${router.asPath}`;
   const keywords = 'jobs, work, remote, wfa, indonesia';
-  const ogImage = 'https://wfa-id-ten.vercel.app/og.png';
+  const ogImage = 'https://id-wfa-companies.vercel.app/og.png';
 
   /* purple-500 */
   const themeColor = '#a855f7';
