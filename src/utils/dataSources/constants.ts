@@ -18,7 +18,6 @@ export const companies: ReadonlyArray<Company> = [
     jobOpeningsUrl: 'https://career.ruangguru.com/',
     imageUrl:
       'https://career.ruangguru.com/static/media/logo-ruangguru.044861d0.png',
-    jobOpeningsFeedUrl: 'https://career.ruangguru.com/vacancies',
   },
   {
     name: 'Pahamify',
