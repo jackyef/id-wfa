@@ -15,6 +15,13 @@ export const getJobOpenings = async (): Promise<JobOpening[]> => {
   const response = await fetch(
     'https://apply.workable.com/api/v3/accounts/amartha/jobs',
     {
+      headers: {
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en',
+        'content-type': 'application/json;charset=UTF-8',
+        Referer: 'https://apply.workable.com/amartha/',
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+      },
       body: '{"query":"","location":[],"department":[],"worktype":[],"remote":[true]}',
       method: 'POST',
     },
