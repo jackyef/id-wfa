@@ -5,8 +5,9 @@ announced that they provide WFA (work-from-anywhere) perks to their employees.
 The job openings list page is implemented using [Next.js incremental static regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration)
 and will be revalidated every 24 hours.
 
-The initial version of this project uses this [tweet](https://twitter.com/antonybudianto/status/1471428324140347397) as a reference for the companies list.
-Number of companies included in this project might increase/decrease as needed.
+The initial version of this project uses this [tweet](https://twitter.com/antonybudianto/status/1471428324140347397) and this [Instagram post](https://www.instagram.com/p/CccNFOiPmHR/) as a reference for the companies list.
+
+Number of companies included in this project can increase/decrease as appropriate.
 
 ## For companies
 
