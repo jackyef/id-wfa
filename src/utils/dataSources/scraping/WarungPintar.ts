@@ -1,0 +1,77 @@
+import fs from 'fs';
+import path from 'path';
+import fetch from 'isomorphic-unfetch';
+import * as cheerio from 'cheerio';
+
+import { JobOpening } from '../../../lib/types';
+import { prettierFormat } from '../../prettier';
+import { companies } from '../constants';
+
+const companyName = 'Warung Pintar';
+const company = companies.find((c) => c.name === companyName);
+
+export const getJobOpenings = async (): Promise<JobOpening[]> => {
+  if (!company) return [];
+
+  const response = await fetch(
+    'https://warungpintar.freshteam.com/jobs?location=[]&department=[]&jobType=[]&title=&isRemoteLocation=true',
+  );
+  const html = await response.text();
+  const $ = cheerio.load(html);
+
+  const jobOpenings: JobOpening[] = [];
+
+  $('li').each((_, element) => {
+    const headingElement = $('h5', element);
+
+    // Remove the <span> inside the heading
+    $('span', headingElement).remove();
+
+    const category = headingElement.text().trim();
+
+    $('.job-list', element).each((_, jobList) => {
+      $('a', jobList).each((_, jobLink) => {
+        const jobTitle = $('.job-title', jobLink).text();
+        const jobUrl = $(jobLink).attr('href');
+        const url = jobUrl
+          ? `https://warungpintar.freshteam.com${jobUrl}`
+          : company.jobOpeningsUrl;
+
+        const jobOpening: JobOpening = {
+          company: companyName,
+          departmentName: category,
+          description: '',
+          url,
+          jobTitle,
+          location: 'Remote',
+        };
+
+        jobOpenings.push(jobOpening);
+      });
+    });
+  });
+
+  return jobOpenings;
+};
+
+export const scrape = async () => {
+  if (!company) return;
+
+  const jobOpenings = await getJobOpenings();
+  const safeCompanyName = company.safeName;
+
+  const output = prettierFormat(
+    `
+    import { JobOpening } from '../../../../lib/types'
+
+    export const ${safeCompanyName}_JOBS: JobOpening[] = ${JSON.stringify(
+      jobOpenings,
+    )}
+  `,
+  );
+
+  fs.writeFileSync(
+    path.join(__dirname, 'static', `${safeCompanyName}.ts`),
+    output,
+  );
+};

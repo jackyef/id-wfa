@@ -116,6 +116,14 @@ export const companies: ReadonlyArray<Company> = [
     imageUrl: 'https://stockbit.com/assets/template/stockbit.svg',
     safeName: 'StockbitBibit',
   },
+  {
+    name: 'Warung Pintar',
+    jobOpeningsUrl:
+      'https://warungpintar.freshteam.com/jobs?location=[]&department=[]&jobType=[]&title=&isRemoteLocation=true',
+    imageUrl:
+      'https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/xn91anduxvqm4vthxqfa',
+    safeName: 'WarungPintar',
+  },
 
   // Skipping Tiket.com because their career pages is hard to scrape lol
   // {
