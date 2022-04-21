@@ -1,4 +1,4 @@
-import { Company } from '../../../../lib/types';
+import { Company, JobOpening } from '../../../../lib/types';
 
 type SmartRecruiterJobEntry = {
   id: string;
@@ -20,7 +20,16 @@ type SmartRecruiterJobEntry = {
 export const getSmartRecruitersJobOpenings = async (
   company: Company,
   smartRecruiterId: string,
-  { useFunctionName } = { useFunctionName: false },
+  {
+    useFunctionName,
+    forceRemote,
+  }: {
+    useFunctionName?: boolean;
+    forceRemote?: boolean;
+  } = {
+    useFunctionName: false,
+    forceRemote: false,
+  },
 ) => {
   const response = await fetch(
     `https://api.smartrecruiters.com/v1/companies/${smartRecruiterId}/postings`,
@@ -30,6 +39,8 @@ export const getSmartRecruitersJobOpenings = async (
 
   const jobOpenings = jobEntries
     .map((job) => {
+      if (forceRemote && !job.location.remote) return null;
+
       return {
         company: company.name,
         departmentName: useFunctionName
@@ -44,5 +55,5 @@ export const getSmartRecruitersJobOpenings = async (
     })
     .filter(Boolean);
 
-  return jobOpenings;
+  return jobOpenings as JobOpening[];
 };

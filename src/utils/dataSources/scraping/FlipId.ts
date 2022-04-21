@@ -51,7 +51,7 @@ export const getJobOpenings = async (): Promise<JobOpening[]> => {
     });
   });
 
-  return jobOpenings;
+  return jobOpenings.filter((job) => job.jobTitle.includes('(Remote)'));
 };
 
 export const scrape = async () => {

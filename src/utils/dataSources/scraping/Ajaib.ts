@@ -13,7 +13,7 @@ export const getJobOpenings = async (): Promise<JobOpening[]> => {
   if (!company) return [];
 
   const jobOpenings = (
-    await getSmartRecruitersJobOpenings(company, 'Ajaib')
+    await getSmartRecruitersJobOpenings(company, 'Ajaib', { forceRemote: true })
   ).filter((j) => {
     return Boolean(j.departmentName) && j.location === 'id';
   });
