@@ -9,6 +9,7 @@ type Props = {
   companies: Company[];
 };
 
+/* Courtesy of: https://csshero.org/mesher/ */
 const FancyBackground = () => {
   return (
     <>
@@ -71,6 +72,7 @@ const FancyBackground = () => {
     </>
   );
 };
+
 const Container: React.FC<{ children: JSX.Element }> = ({ children }) => {
   return <div className={clsx('p-8', 'max-w-6xl', 'mx-auto')}>{children}</div>;
 };

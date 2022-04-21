@@ -62,6 +62,15 @@ export const db = {
     }
   },
   getCompanies: () => companies as Company[],
+  getCompanyBySafeName: (companySafeName: string) => {
+    const matchedCompany = companies.find(
+      (company) =>
+        company.name.toLowerCase() === companySafeName.toLowerCase() ||
+        company?.safeName?.toLowerCase() === companySafeName.toLowerCase(),
+    );
+
+    return matchedCompany;
+  },
   // searchJobs: (query: string) => {
   //   const results = [];
 
