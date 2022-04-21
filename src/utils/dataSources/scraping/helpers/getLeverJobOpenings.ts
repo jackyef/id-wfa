@@ -15,11 +15,20 @@ type LeverJobEntry = {
 export const getLeverJobOpenings = async (
   company: Company,
   leverId: string,
-  { useTeamName } = { useTeamName: false },
+  {
+    useTeamName,
+    department,
+  }: { useTeamName?: boolean; department?: string } = {
+    useTeamName: false,
+    department: '',
+  },
 ): Promise<JobOpening[]> => {
-  const response = await fetch(
-    `https://api.lever.co/v0/postings/${leverId}?mode=json`,
-  );
+  let url = `https://api.lever.co/v0/postings/${leverId}?mode=json`;
+
+  if (department) {
+    url += `&department=${encodeURIComponent(department)}`;
+  }
+  const response = await fetch(url);
   const json: LeverJobEntry[] = await response.json();
 
   const jobOpenings: JobOpening[] = json.map((job) => {
