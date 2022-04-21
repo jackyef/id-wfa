@@ -4,6 +4,7 @@ import Error from 'next/error';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 import { JobList } from '../../components/JobList/JobList';
+import { MetaTags } from '../../components/MetaTags/MetaTags';
 import { Flip } from '../../lib/flip/react';
 import { Company, JobOpening } from '../../lib/types';
 import { companies } from '../../utils/dataSources/constants';
@@ -150,6 +151,10 @@ const CompanyJobsPage: NextPage<Props> = ({
 
   return (
     <div>
+      <MetaTags
+        title={`Indonesian remote-friendly jobs at ${company?.name}`}
+        description={`${company?.name} has ~${jobs.length} job openings that allows the employee to work from anywhere.`}
+      />
       <div className={clsx('h-72', 'relative', 'overflow-hidden')}>
         <FancyBackground />
       </div>

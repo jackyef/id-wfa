@@ -55,8 +55,6 @@ export const animate = (
 
   const newComputedStyle = getComputedStyle(newNode);
 
-  console.log('animating...', { deltaX, deltaY, deltaScaleX, deltaScaleY });
-
   // Using the Web Animation API
   newNode.animate(
     [

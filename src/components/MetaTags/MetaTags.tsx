@@ -1,11 +1,13 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
-export const MetaTags = () => {
-  const title = 'Indonesian remote-friendly companies 🇮🇩';
-  const description =
-    'Job openings for Indonesian companies that offer the perk of working from anywhere.';
+export const MetaTags = ({
+  title = 'Indonesian remote-friendly companies 🇮🇩',
+  description = 'Job openings for Indonesian companies that offer the perk of working from anywhere.',
+}) => {
+  const router = useRouter();
+  const url = `https://wfa-id-ten.vercel.app${router.asPath}`;
   const keywords = 'jobs, work, remote, wfa, indonesia';
-  const url = 'https://wfa-id-ten.vercel.app/';
   const ogImage = 'https://wfa-id-ten.vercel.app/og.png';
 
   /* purple-500 */
