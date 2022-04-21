@@ -135,9 +135,9 @@ const CompanyJobsPage: NextPage<Props> = ({
             'p-4',
             'rounded-md',
             'border',
-            'border-purple-600',
-            'text-purple-800',
-            'bg-purple-50',
+            'border-yellow-600',
+            'text-yellow-800',
+            'bg-yellow-50',
           )}
         >
           We can&apos;t seem to find jobs for {company?.name} at the moment. Try
