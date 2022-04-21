@@ -111,7 +111,7 @@ const CompanyJobsPage: NextPage<Props> = ({
             'bg-purple-50',
           )}
         >
-          This page scrapes job openings from {company?.name} jobs page. For the
+          This page scrapes job openings from {companyName} jobs page. For the
           most up-to-date job openings, please refer to their{' '}
           <a
             className={clsx(
@@ -141,7 +141,7 @@ const CompanyJobsPage: NextPage<Props> = ({
             'bg-yellow-50',
           )}
         >
-          We can&apos;t seem to find jobs for {company?.name} at the moment. Try
+          We can&apos;t seem to find jobs for {companyName} at the moment. Try
           visiting their{' '}
           <a
             className={clsx(
@@ -161,11 +161,13 @@ const CompanyJobsPage: NextPage<Props> = ({
     }
   };
 
+  const companyName = company?.name;
+
   return (
     <div>
       <MetaTags
-        title={`Indonesian remote-friendly jobs at ${company?.name}`}
-        description={`${company?.name} has ~${jobs.length} job openings that allows the employee to work from anywhere.`}
+        title={`Indonesian remote-friendly jobs at ${companyName}`}
+        description={`${companyName} has ~${jobs.length} job openings that allows the employee to work from anywhere.`}
       />
       <div className={clsx('h-72', 'relative', 'overflow-hidden')}>
         <FancyBackground />
@@ -203,7 +205,7 @@ const CompanyJobsPage: NextPage<Props> = ({
             </div>
           </Flip>
           <h2 className={clsx('text-2xl', 'mb-8', 'items-baseline')}>
-            {company?.name}
+            {companyName}
 
             <span
               className={clsx(
@@ -215,6 +217,8 @@ const CompanyJobsPage: NextPage<Props> = ({
                 'border-cyan-600',
                 'text-cyan-800',
                 'bg-cyan-50',
+                'inline-block',
+                'translate-y-[-3px]', // Needed for optical alignment
               )}
             >
               {jobs.length} openings
