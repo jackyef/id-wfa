@@ -3,7 +3,7 @@
 This project scrapes job openings from Indonesian companies that have publicly
 announced that they provide WFA (work-from-anywhere) perks to their employees.
 The job openings list page is implemented using [Next.js incremental static regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration)
-and will be revalidated every 24 hours.
+and will be revalidated at most every 24 hours.
 
 The initial version of this project uses this [tweet](https://twitter.com/antonybudianto/status/1471428324140347397) and this [Instagram post](https://www.instagram.com/p/CccNFOiPmHR/) as a reference for the companies list.
 
@@ -11,11 +11,14 @@ Number of companies included in this project can increase/decrease as appropriat
 
 ## For companies
 
-If you would like your company to be removed from the site, please file an issue and I'll get to it.
+If you would like your company to be removed from the site, please [file an issue](https://github.com/jackyef/id-wfa/issues/new) and I'll get to it.
 
 If you would like your company to be included in the site, please also file an issue with
-a link to your jobs list page. I can't guarantee I can collect the data myself from there though!
-For better support, please provide an endpoint that returns the job data. If you are not sure what this is, ask your dev team, this can be an XML (RSS, feed), plain REST returning a JSON or a GraphQL endpoint. The amount of data this project need is very little:
+a link to your jobs list page along with the related announcement as a proof that your company 
+provides full WFA perks. 
+
+Though, I can't guarantee I can collect the data myself from the job list page!
+For better support, please provide an endpoint that returns the job data. If you are not sure what this is, ask your dev team, this can be an XML (RSS, feed), plain REST returning a JSON or a GraphQL endpoint. The amount of data this project needs is very little:
 
 ```ts
 type JobOpening = {
