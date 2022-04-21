@@ -130,6 +130,13 @@ export const companies: ReadonlyArray<Company> = [
     imageUrl:
       'https://amartha.com/wp-content/uploads/2020/12/amartha-logo-2020.png',
   },
+  {
+    name: 'Bobobox',
+    jobOpeningsUrl:
+      'https://glints.com/id/en/companies/pt-bobobox-mitra-indonesia/00e32ac6-95b0-4723-8dc2-f3a32f1d884d',
+    imageUrl:
+      'https://images.glints.com/unsafe/180x0/glints-dashboard.s3.amazonaws.com/company-logo/7973546193a09e8ea30b36e17021e0ec.jpg',
+  },
 
   // Skipping Tiket.com because their career pages is hard to scrape lol
   // {
