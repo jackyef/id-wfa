@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Error from 'next/error';
+import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 import { JobList } from '../../components/JobList/JobList';
@@ -16,6 +17,16 @@ const FancyBackground = () => {
       <div
         className={clsx('fancyBackground', 'absolute', 'inset-0', '-z-10')}
       />
+      <Container>
+        <Link href="/" passHref>
+          <a
+            className={clsx('-m-2', 'text-2xl', 'text-white', 'font-bold')}
+            aria-label="Back to homepage"
+          >
+            <span aria-hidden>id-WFA 🇮🇩</span>
+          </a>
+        </Link>
+      </Container>
       <style jsx>{`
         .fancyBackground {
           background-color: #b499ff;

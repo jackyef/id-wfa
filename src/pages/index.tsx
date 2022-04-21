@@ -99,7 +99,7 @@ const HeroText = () => {
     >
       Indonesian
       <br />
-      WFA-friendly companies 🇮🇩
+      WFA-friendly companies <span aria-hidden>🇮🇩</span>
     </h1>
   );
 };
