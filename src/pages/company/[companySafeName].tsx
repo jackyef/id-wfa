@@ -111,8 +111,10 @@ const CompanyJobsPage: NextPage<Props> = ({
             'bg-purple-50',
           )}
         >
-          This page scrapes job openings from {companyName} jobs page. For the
-          most up-to-date job openings, please refer to their{' '}
+          This page scrapes job openings from {companyName} jobs page.
+          <br />
+          <br />
+          For the latest and most accurate job openings, please refer to their{' '}
           <a
             className={clsx(
               'underline',
