@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { Flip } from '../../lib/flip/react';
 import { MetaTags } from '../MetaTags/MetaTags';
 
 type Props = {
@@ -30,24 +29,22 @@ export const CompanyCard = ({ image, name, safeName }: Props) => {
           'sm:max-w-none',
         )}
       >
-        <Flip id={safeName}>
-          <div
-            className={clsx(
-              'bg-white',
-              'rounded-full',
-              'shadow-inner',
-              'shadow-slate-300',
-              'p-4',
-            )}
-          >
-            <img
-              alt=""
-              src={image}
-              loading="lazy"
-              className={clsx('w-20', 'h-20', 'object-contain', 'rounded-full')}
-            />
-          </div>
-        </Flip>
+        <div
+          className={clsx(
+            'bg-white',
+            'rounded-full',
+            'shadow-inner',
+            'shadow-slate-300',
+            'p-4',
+          )}
+        >
+          <img
+            alt=""
+            src={image}
+            loading="lazy"
+            className={clsx('w-20', 'h-20', 'object-contain', 'rounded-full')}
+          />
+        </div>
         <h3 className={clsx('text-slate-700', 'text-lg')}>{name}</h3>
 
         <Link href={`/company/${safeName}`} passHref>

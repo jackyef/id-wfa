@@ -7,7 +7,6 @@ import React from 'react';
 import { Footer } from '../../components/Footer';
 import { JobList } from '../../components/JobList/JobList';
 import { MetaTags } from '../../components/MetaTags/MetaTags';
-import { Flip } from '../../lib/flip/react';
 import { Company, JobOpening } from '../../lib/types';
 import { companies } from '../../utils/dataSources/constants';
 import { db } from '../../utils/dataSources/db';
@@ -176,36 +175,34 @@ const CompanyJobsPage: NextPage<Props> = ({
       </div>
       <Container>
         <main className="mb-16">
-          <Flip id={companySafeName}>
-            <div
+          <div
+            className={clsx(
+              '-mt-20',
+              'md:-mt-28',
+              'mb-4',
+              'bg-white',
+              'inline-block',
+              'rounded-full',
+              'shadow-inner',
+              'shadow-slate-300',
+              'p-4',
+              '-ml-2',
+            )}
+          >
+            <img
+              alt=""
+              src={company?.imageUrl}
+              loading="lazy"
               className={clsx(
-                '-mt-20',
-                'md:-mt-28',
-                'mb-4',
-                'bg-white',
-                'inline-block',
+                'w-20',
+                'h-20',
+                'md:w-32',
+                'md:h-32',
+                'object-contain',
                 'rounded-full',
-                'shadow-inner',
-                'shadow-slate-300',
-                'p-4',
-                '-ml-2',
               )}
-            >
-              <img
-                alt=""
-                src={company?.imageUrl}
-                loading="lazy"
-                className={clsx(
-                  'w-20',
-                  'h-20',
-                  'md:w-32',
-                  'md:h-32',
-                  'object-contain',
-                  'rounded-full',
-                )}
-              />
-            </div>
-          </Flip>
+            />
+          </div>
           <h2 className={clsx('text-2xl', 'mb-8', 'items-baseline')}>
             {companyName}
 
