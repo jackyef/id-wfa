@@ -5,18 +5,10 @@ import fetch from 'isomorphic-unfetch';
 import { prettierFormat } from '../../prettier';
 import { companies } from '../constants';
 import { JobOpening } from '../../../lib/types';
-
-type StockbitJobEntry = {
-  id: string;
-  shortcode: string;
-  title: string;
-  remote: boolean;
-  location: {
-    country: string;
-  };
-  published: string;
-  department: string[];
-};
+import {
+  convertWorkableJobEntries,
+  WorkableJobEntry,
+} from './helpers/convertWorkableJobEntries';
 
 const companyName = 'Stockbit/Bibit';
 const company = companies.find((c) => c.name === companyName);
@@ -31,20 +23,13 @@ export const getJobOpenings = async (): Promise<JobOpening[]> => {
     },
   );
   const json = await response.json();
-  const jobEntries = json.results as StockbitJobEntry[];
+  const jobEntries = json.results as WorkableJobEntry[];
 
   const jobOpenings = jobEntries.map((job) => {
     if (job.location.country !== 'Indonesia') return;
     if (!job.remote) return;
 
-    return {
-      company: company.name,
-      departmentName: job.department[0],
-      jobTitle: job.title,
-      url: `https://apply.workable.com/stockbit/j/${job.shortcode}`,
-      location: job.location.country,
-      publishedAt: new Date(job.published).toISOString(),
-    };
+    return convertWorkableJobEntries(job, company.name);
   });
 
   return jobOpenings.filter(Boolean) as JobOpening[];

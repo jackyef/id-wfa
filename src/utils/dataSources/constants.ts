@@ -124,6 +124,12 @@ export const companies: ReadonlyArray<Company> = [
       'https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/xn91anduxvqm4vthxqfa',
     safeName: 'WarungPintar',
   },
+  {
+    name: 'Amartha',
+    jobOpeningsUrl: 'https://apply.workable.com/amartha/',
+    imageUrl:
+      'https://amartha.com/wp-content/uploads/2020/12/amartha-logo-2020.png',
+  },
 
   // Skipping Tiket.com because their career pages is hard to scrape lol
   // {
