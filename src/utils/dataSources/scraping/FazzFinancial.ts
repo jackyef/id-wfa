@@ -7,14 +7,14 @@ import { JobOpening } from '../../../lib/types';
 
 import { getLeverJobOpenings } from './helpers/getLeverJobOpenings';
 
-const companyName = 'Ruangguru';
+const companyName = 'Fazz Financial';
 const company = companies.find((c) => c.name === companyName);
 
 export const getJobOpenings = async (): Promise<JobOpening[]> => {
   if (!company) return [];
 
-  const jobOpenings = await getLeverJobOpenings(company, 'ruangguru', {
-    department: 'Engineering & Data',
+  const jobOpenings = await getLeverJobOpenings(company, 'fazzfinancial', {
+    department: 'Engineering',
     useTeamName: true,
   });
 
