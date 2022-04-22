@@ -142,6 +142,11 @@ export const companies: ReadonlyArray<Company> = [
     imageUrl: '/assets/company-logo/FazzFinancial.png',
     safeName: 'FazzFinancial',
   },
+  {
+    name: 'Pintu',
+    jobOpeningsUrl: 'https://careers.pintu.co.id/jobs',
+    imageUrl: '/assets/company-logo/Pintu.png',
+  },
 
   // Skipping Tiket.com because their career pages are hard to scrape lol
   // {
