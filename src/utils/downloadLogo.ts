@@ -21,11 +21,10 @@ const downloadFile = async (url: string, path: string) => {
  * Replace company info here as needed.
  */
 const company = {
-  name: 'Fazz Financial',
-  jobOpeningsUrl: 'https://jobs.lever.co/fazzfinancial?department=Engineering',
+  name: 'Pintu',
   imageUrl:
-    'https://mobitekno.com/wp-content/uploads/2021/03/Logo-Fazz-Financial.png',
-  safeName: 'FazzFinancial',
+    'https://user-images.githubusercontent.com/104187612/164638657-e58b8e21-c303-4670-96f4-11885c7bbd16.png',
+  safeName: 'Pintu',
 };
 
 const imageUrl = company.imageUrl;
