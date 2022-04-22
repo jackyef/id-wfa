@@ -150,6 +150,14 @@ export const companies: ReadonlyArray<Company> = [
     imageUrl:
       'https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/18adbbbceb84578b0a83588eaa212d92.png',
   },
+  {
+    name: 'Fazz Financial',
+    jobOpeningsUrl:
+      'https://jobs.lever.co/fazzfinancial?department=Engineering',
+    imageUrl:
+      'https://mobitekno.com/wp-content/uploads/2021/03/Logo-Fazz-Financial.png',
+    safeName: 'FazzFinancial',
+  },
 
   // Skipping Tiket.com because their career pages is hard to scrape lol
   // {
