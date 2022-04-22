@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Error from 'next/error';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
@@ -86,12 +87,7 @@ interface Params extends ParsedUrlQuery {
   companySafeName: string;
 }
 
-const CompanyJobsPage: NextPage<Props> = ({
-  errorCode,
-  jobs,
-  company,
-  companySafeName,
-}) => {
+const CompanyJobsPage: NextPage<Props> = ({ errorCode, jobs, company }) => {
   if (errorCode) {
     return <Error statusCode={errorCode} />;
   }
@@ -189,9 +185,12 @@ const CompanyJobsPage: NextPage<Props> = ({
               '-ml-2',
             )}
           >
-            <img
+            <Image
               alt=""
-              src={company?.imageUrl}
+              src={company?.imageUrl || ''}
+              width={128}
+              height={128}
+              layout="fixed"
               loading="lazy"
               className={clsx(
                 'w-20',

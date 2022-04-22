@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MetaTags } from '../MetaTags/MetaTags';
 
@@ -38,10 +39,13 @@ export const CompanyCard = ({ image, name, safeName }: Props) => {
             'p-4',
           )}
         >
-          <img
+          <Image
             alt=""
             src={image}
             loading="lazy"
+            width={80}
+            height={80}
+            layout="fixed"
             className={clsx('w-20', 'h-20', 'object-contain', 'rounded-full')}
           />
         </div>
