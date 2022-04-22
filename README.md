@@ -11,10 +11,10 @@ Number of companies included in this project can increase/decrease as appropriat
 
 ## For companies
 
-**If you would like your company to be removed from the site**
+### If you would like your company to be removed from the site
 Please [file an issue](https://github.com/jackyef/id-wfa/issues/new) and I'll get to it.
 
-**If you would like your company to be included in the site** 
+### If you would like your company to be included in the site 
 Please [file an issue](https://github.com/jackyef/id-wfa/issues/new) with the following included:
 - an image URL to the company logo
 - a link to your company jobs list page 
